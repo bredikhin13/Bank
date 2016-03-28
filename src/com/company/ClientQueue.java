@@ -3,9 +3,6 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * Created by User on 28.03.2016.
- */
 public class ClientQueue implements Runnable{
     int timeSpan;
     ArrayList<Operator> operators;
