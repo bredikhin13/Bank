@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class ClientQueue implements Runnable{
     int timeSpan;
+    static final int clientCount = 10;
     ArrayList<Operator> operators;
     public ClientQueue(int time, ArrayList<Operator> list){
         timeSpan = time;
@@ -14,10 +15,10 @@ public class ClientQueue implements Runnable{
     public void run() {
         Operator operator = operators.get(0);
         Random random = new Random();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < clientCount; i++) {
             Client client = new Client("client"+i);
             for(Operator op:operators){
-                if(op.getClintCount()<operator.getClintCount()){
+                if(op.getClientCount()<operator.getClientCount()){
                     operator = op;
                 }
             }
